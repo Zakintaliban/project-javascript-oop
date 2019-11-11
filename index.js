@@ -1,49 +1,45 @@
 class Car {
-  constructor(owner = "Zakin", name = "Toyota Agya") {
-    this.owner = owner;
-    this.name = name;
+  constructor(pemilik = "Zakin", merk = "Toyota Agya") {
+    this.pemilik = pemilik;
+    this.merk = merk;
   }
 
   drive() {
     console.log(
-      `The ${this.name} car owned by ${this.owner} drives on the road`
+      `Mobil ${this.merk} itu yang punya ${this.pemilik} sedang menyetir di jalan`
     );
   }
 
-  getOwner() {
-    return this.owner;
+  getpemilik() {
+    return this.pemilik;
   }
 
-  getOwner() {
-    return this.name;
+  getPemilik() {
+    return this.merk;
   }
 }
-
-
 
 const myCar = new Car("Zakin", "Toyota Agya");
 
 console.log(myCar);
-// Car { owner: 'Elon', name: 'Tesla Model S' }
+// Car { pemilik: 'Elon', merk: 'Tesla Model S' }
 
 myCar.drive();
 // The Tesla Model S car owned by Elon drives on the road
 
-console.log(myCar.getOwner());
+console.log(myCar.getpemilik());
 // Elon
 
-
-
 class SportsCar extends Car {
-  constructor({ owner, name, color, price, engine }) {
-    super(owner, name);
-    this.color = color;
-    this.price = price;
-    this.engine = engine;
+  constructor({ pemilik, merk, warna, harga, mesin }) {
+    super(pemilik, merk);
+    this.warna = warna;
+    this.harga = harga;
+    this.mesin = mesin;
   }
 
-  getColor() {
-    return this.color;
+  getwarna() {
+    return this.warna;
   }
 
   getPrice() {
@@ -61,14 +57,12 @@ class SportsCar extends Car {
   }
 }
 
-
-
 const coolCar = new SportsCar({
-  owner: "Zakin",
-  name: "Toyota Agya",
-  color: "White",
-  price: "80000000", // IDR
-  engine: "Gas"
+  pemilik: "Zakin",
+  merk: "Toyota Agya",
+  warna: "Putih",
+  harga: "80000000", // IDR
+  mesin: "Gasoline"
 });
 
 console.log(coolCar);
@@ -77,8 +71,8 @@ console.log(coolCar);
 coolCar.drive();
 // The Tesla Roadster car owned by Starman drives on the road
 
-console.log(coolCar.getColor());
-// Red
+console.log(coolCar.getwarna());
+// Putih
 
 console.log(coolCar.getPrice());
-// $200,000
+// Rp.80,000,000
